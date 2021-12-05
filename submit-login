@@ -1,0 +1,104 @@
+#include <iostream>
+#include <fstream>
+#include <conio.h>
+
+using namespace std;
+
+class pishro{
+public:
+
+    void submit(){
+
+
+ifstream sbmt2("submit.dat");
+if(!sbmt2){
+    cout<<"error";
+    exit(0);
+}
+
+string c;
+sbmt2>>c;
+sbmt2.close();
+
+
+
+
+ofstream sbmt("submit.dat",ios::app);
+if(!sbmt){
+    cout<<"error";
+    exit(0);
+}
+while(true){
+string s;
+
+cin>>s;
+
+if(s==c){
+cout<<"error";
+   }
+    else if(s!=c){
+sbmt<<s;
+break;
+    //}
+}
+}
+}
+
+        void login(){
+          ifstream sbmt2("submit.dat");
+if(!sbmt2){
+    cout<<"error";
+    exit(0);
+}
+
+string c;
+sbmt2>>c;
+sbmt2.close();
+
+
+
+
+ofstream sbmt("submit.dat",ios::app);
+if(!sbmt){
+    cout<<"error";
+    exit(0);
+}
+while(true){
+string s;
+
+cin>>s;
+
+if(s!=c){
+cout<<"error";
+   }
+    else if(s==c){
+cout<<"Welcome!";
+break;
+    //}
+}
+}
+}
+
+
+
+    };
+
+
+
+int main()
+{
+pishro give;
+string get;
+cin>>get;
+
+if(get=="submit"||get=="Submit"){
+    give.submit();
+}
+else if(get=="login"||get=="Login"){
+    give.login();
+}
+else{
+    cout<<"error";
+}
+    return 0;
+}
